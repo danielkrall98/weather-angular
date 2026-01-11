@@ -1,0 +1,44 @@
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+input {
+  padding: 8px;
+  font-size: 16px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  width: 120px;
+  padding: 8px 16px;
+  background-color: #333;
+  color: #eee;
+  border-radius: 8px;
+  border: 1px solid #5f5f5f;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #444;
+}
+
+.card {
+  margin-top: 20px;
+  padding: 20px;
+  display: inline-block;
+  border-radius: 8px;
+  background: #333;
+  width: 340px;
+}
+
+.error {
+  color: red;
+}
