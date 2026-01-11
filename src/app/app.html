@@ -11,7 +11,7 @@
     }
   </div>
 
-  @if (weather) {
+  @if (weather$ | async; as weather) {
     <div class="card">
       <h2>{{ selectedCity }}</h2>
       <p>{{ weather.temperature }} °C</p>

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
 import { WeatherService, WeatherResult } from './services/weather';
+import { Observable } from 'rxjs';
 
 interface City {
   name: string;
@@ -10,6 +12,7 @@ interface City {
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [AsyncPipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -22,16 +25,14 @@ export class App {
     { name: 'Vienna', lat: 48.208, lon: 16.373 }
   ];
 
-  weather: WeatherResult | null = null;
+  weather$!: Observable<WeatherResult>;
   selectedCity: string | null = null;
 
   constructor(private weatherService: WeatherService) {}
 
   loadCity(city: City) {
     this.selectedCity = city.name;
-    this.weatherService
-      .getWeather(city.lat, city.lon)
-      .subscribe(result => this.weather = result);
+    this.weather$ = this.weatherService.getWeather(city.lat, city.lon);
   }
 
 }
