@@ -5,11 +5,13 @@
     @for (city of cities; track city.name) {
       <button
         type="button"
+        [class.active]="city.name === selectedCity"
         (click)="loadCity(city)">
         {{ city.name }}
       </button>
     }
   </div>
+  
 
   @if (weather$ | async; as weather) {
     <div class="card">

@@ -22,7 +22,8 @@ export class App {
   cities: City[] = [
     { name: 'Bad Ischl', lat: 47.712, lon: 13.627 },
     { name: 'Salzburg', lat: 47.813, lon: 13.044 },
-    { name: 'Vienna', lat: 48.208, lon: 16.373 }
+    { name: 'Innsbruck', lat: 48.208, lon: 16.373 },
+    { name: 'Vienna', lat: 47.262, lon: 11.400 }
   ];
 
   weather$!: Observable<WeatherResult>;
